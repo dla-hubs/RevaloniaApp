@@ -1,0 +1,103 @@
+<Window
+    x:Class="TwoPointHeightUi.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:RevaloniaAddin.Addins.ViewModel"
+    Title="Level difference between two points"
+    Width="450"
+    Height="350"
+    MaxWidth="350"
+    MaxHeight="250"
+    d:DesignHeight="250"
+    d:DesignWidth="400"
+    ExtendClientAreaToDecorationsHint="true"
+    mc:Ignorable="d">
+
+
+    <Panel
+        Width="350"
+        Height="250"
+        VerticalAlignment="Bottom">
+
+        <Border
+            Width="300"
+            Height="150"
+            Margin="45"
+            VerticalAlignment="Top"
+            BorderBrush="Black"
+            BorderThickness="1">
+            <StackPanel>
+                <Border
+                    Height="90"
+                    Margin="10"
+                    VerticalAlignment="Top"
+                    BorderBrush="Black"
+                    BorderThickness="1">
+                    <StackPanel Spacing="5">
+                        <TextBlock Margin="5">Level Difference is:</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" FontSize="25">+6.5m</TextBlock>
+                        <StackPanel
+                            Margin="5"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal"
+                            Spacing="10">
+                            <TextBlock FontSize="10">First Point @ 112</TextBlock>
+                            <TextBlock FontSize="10">Second Point @ 1</TextBlock>
+                        </StackPanel>
+
+
+
+                    </StackPanel>
+                </Border>
+                <Border
+                    Height="28"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    BorderBrush="DarkGray">
+                    <StackPanel Orientation="Horizontal" Spacing="20">
+
+                        <Button
+                            Width="127.5"
+                            Height="30"
+                            BorderBrush="DarkGray"
+                            Content="   Reselect First Point"
+                            FontSize="10"
+                            ToolTip.Tip="e.g. spot elevation, spot coordinate, or spot slopes" />
+
+                        <Button
+                            Width="127.5"
+                            Height="30"
+                            BorderBrush="DarkGray"
+                            Content=" Reselect Second Point"
+                            FontSize="10"
+                            ToolTip.Tip="e.g. spot elevation, spot coordinate, or spot slopes" />
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+        </Border>
+
+
+        <Button
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            ToolTip.Tip="e.g. spot elevation, spot coordinate, or spot slopes">
+            Pick Two Spot Dimensions
+        </Button>
+
+        <Button
+            Margin="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Command="{Binding SimpleButtonTest}"
+            ToolTip.Tip="Quit &amp; delete the selected spot dimensions">
+            QUIT &amp; DELETE
+        </Button>
+
+
+    </Panel>
+</Window>

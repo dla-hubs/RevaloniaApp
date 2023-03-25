@@ -1,0 +1,104 @@
+<UserControl
+    x:Class="RevaloniaAddin.Addins.Views.LevelDifferenceWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:RevaloniaAddin.Addins.MainViewModel"
+    d:DesignHeight="250"
+    d:DesignWidth="400">
+
+    <Panel
+        Width="350"
+        Height="250"
+        VerticalAlignment="Bottom">
+
+        <Border
+            Width="300"
+            Height="150"
+            Margin="45"
+            VerticalAlignment="Top"
+            BorderBrush="Black"
+            BorderThickness="1">
+            <StackPanel>
+                <Border
+                    Height="90"
+                    Margin="10"
+                    VerticalAlignment="Top"
+                    BorderBrush="Black"
+                    BorderThickness="1">
+                    <StackPanel Spacing="5">
+                        <TextBlock Margin="5">Level Difference is:</TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontSize="25"
+                            Text="{Binding LevelDifferenceDisplay}" />
+                        <StackPanel
+                            Margin="5"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal"
+                            Spacing="10">
+                            <TextBlock FontSize="10" Text="{Binding FirstPointDisplay}" />
+                            <TextBlock FontSize="10" Text="{Binding SecondPointDisplay}" />
+                        </StackPanel>
+
+
+
+                    </StackPanel>
+                </Border>
+                <Border
+                    Height="28"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    BorderBrush="Black">
+                    <StackPanel Orientation="Horizontal" Spacing="20">
+
+                        <Button
+                            Width="127.5"
+                            Height="30"
+                            BorderBrush="DarkGray"
+                            Command="{Binding ReselectFirstPoint}"
+                            Content="   Reselect First Point"
+                            FontSize="10"
+                            IsEnabled="{Binding CanPressReselect}"
+                            ToolTip.Tip="e.g. spot elevation, spot coordinate, or spot slopes" />
+
+                        <Button
+                            Width="127.5"
+                            Height="30"
+                            BorderBrush="DarkGray"
+                            Command="{Binding ReselectSecondPoint}"
+                            Content=" Reselect Second Point"
+                            FontSize="10"
+                            IsEnabled="{Binding CanPressReselect}"
+                            ToolTip.Tip="e.g. spot elevation, spot coordinate, or spot slopes" />
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+        </Border>
+
+
+        <Button
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Command="{Binding TwoSpotsElevation}"
+            ToolTip.Tip="e.g. spot elevation, spot coordinate, or spot slopes">
+            Pick Two Spot Dimensions
+        </Button>
+
+        <Button
+            Margin="10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Command="{Binding DeleteSelectedsSpotDims}"
+            IsEnabled="{Binding CanPressDelete}"
+            ToolTip.Tip="Delete the selected spot dimensions">
+            DELETE
+        </Button>
+
+
+    </Panel>
+</UserControl>
